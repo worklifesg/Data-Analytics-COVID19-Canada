@@ -14,8 +14,8 @@ covid_df=pd.read_excel('D:\Python\GitHub\COVID Data analytics\Cases_Canada.xlsx'
 covid_df = covid_df.groupby(['SummaryDate','Province']).agg({'TotalCases':np.sum})
 
 covid_df = covid_df.groupby('SummaryDate')['TotalCases'].nlargest(15).reset_index(level=1,drop=True)
-##with open('Data.txt','a') as f:
-##    print(covid_df.head(20),file=f)
+
+##Model Visualization ##
 
 provinces=np.array([province[1] for province in covid_df.index])
 provinces=np.unique(provinces)
@@ -25,7 +25,7 @@ colors=cmap(np.linspace(0,1,len(provinces)))
 color_dict=dict(zip(provinces,colors))
 
 
-##Plotting ##
+##Plotting for single date graph ## (Uncomment it when needed to plot single bar graph
 
 ##plt.figure()
 ##date=pd.to_datetime('4/22/20',format='%m/%d/%y')
@@ -53,6 +53,8 @@ color_dict=dict(zip(provinces,colors))
 ##    ax.text(bar.get_width(), bar.get_y() + bar.get_height()/2, '  ' + str(bar.get_width()), va='center')
 ##
 ##plt.show()
+
+## Animation setup and modeling ##
 
 dates=np.sort(np.unique(covid_df.index.get_level_values(level=0)))
 n=len(dates)
