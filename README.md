@@ -14,4 +14,4 @@ Line Race Chart file: covid_data_analysis_line_race.py
 # Animation video files:
 Bar Race Chart file (Total Cases and Total Deaths cases provincal wise): covid_case.mp4, covid_death.mp4
 
-Line Race Chart file (Total Cases, Active cases, Total deaths, Total Recovered for QUEBEC): covid_line.py
+Line Race Chart file (Total Cases, Active cases, Total deaths, Total Recovered for QUEBEC): covid_line.mp4
